@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f8f9
+}
+
+.container .card {
+    height: 589px;
+    width: 450px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Lato', sans-serif;
+    border-radius: 10px;
+    border-bottom: 6px solid blue;
+}
+
+.container .card .form {
+    width: 107%;
+    height: 100%;
+    display: flex
+}
+.container .card .right-side {
+    width: 85%;
+    background-color: #fff;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-left: 20px;
+
+}
+
+.main {
+    display: none
+}
+
+.active {
+    display: block !important
+}
+
+.manage {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.manage p {
+    font-size: 14px;
+    margin-top: 10px
+}
+
+.input_div {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    width: 100%
+}
+
+.input_div textarea {
+    height: 70px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    padding: 5px;
+    resize: none;
+    box-sizing: border-box;
+    transition: all 0.5s
+}
+
+.input_text {
+    position: relative;
+    width: 100%
+}
+
+input[type="textarea"] {
+    height: 45px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s
+}
+
+input[type="text"],input[type="date"],input[type="number"],input[type="email"]{
+    height: 40px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s
+}
+
+input[type="password"] {
+    height: 45px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    padding-right: 30px
+}
+
+.input_text select {
+    height: 45px;
+    width: 100%;
+    outline: 0;
+    border: 1px solid #b1b1b1;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    cursor: pointer;
+    color: #b1b1b1
+}
+
+.input_text select option:nth-child(1) {
+    display: none
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0
+}
+
+.shown_name {
+    color: green !important
+}
+
+.fa-eye-slash {
+    position: absolute;
+    top: 14px;
+    right: 7px;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: #b1b1b1
+}
+
+.fa-eye {
+    position: absolute;
+    top: 14px;
+    right: 7px;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: #b1b1b1
+}
+
+
+.input_text label {
+    pointer-events: none;
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    font-size: 14px;
+    color: #b1b1b1;
+    transition: all 0.5s
+}
+
+.input_text input:focus {
+    border: 1px solid blue !important;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+}
+
+.input_text input:focus~label,
+.input_text input:valid~label {
+    top: -17px;
+    left: 0;
+    color: #1529e2;
+    font-weight: 700
+}
+
+.agree {
+    margin-top: 30px;
+    display: flex;
+    gap: 5px;
+    width: 100% !important;
+    align-items: center
+}
+
+.agree span {
+    height: 20px;
+    width: 20px !important;
+    border-radius: 3px;
+    border: 1px solid #b1b1b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-align: center
+}
+
+.agree span i {
+    width: 100%;
+    margin-top: 1px;
+    color: #fff
+}
+
+.agree p {
+    font-size: 14px
+}
+
+.agree p a {
+    text-decoration: none
+}
+
+.agree_green {
+    background-color: green !important
+}
+
+.agree_submit {
+    margin-top: 30px;
+    display: flex;
+    gap: 5px;
+    width: 100% !important
+}
+
+.agree_submit span {
+    height: 18px;
+    width: 20px !important;
+    border-radius: 3px;
+    border: 1px solid #b1b1b1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.agree_submit span i {
+    width: 100%;
+    margin-top: 1px;
+    color: #fff
+}
+
+.agree_submit p {
+    font-size: 14px
+}
+
+.agree_submit_green {
+    background-color: green !important
+}
+
+.button {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px
+}
+
+.button button {
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #202035;
+    
+}
+
+.button button:hover {
+    background-color: #1529e2 !important
+}
+
+/* .step_1 {
+    margin-top: 60px
+}
+
+.step_2 {
+    gap: 10px
+}
+
+.m_top {
+    margin-top: 64px
+}
+
+.step_3 {
+    margin-top: 112px
+}
+
+.step_4 {
+    margin-top: 117px
+}
+
+.h4_txt {
+    text-align: center
+} */
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #7ac142;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 10% auto;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+.aadhar{
+    background: url("Aadhar.svg") no-repeat right;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #7ac142
+    }
+}
+
+.warning {
+    border: 1px solid red !important
+}
+
+@media (max-width:750px) {
+    .container .card {
+        max-width: 350px;
+        height: auto;
+        margin: 50px 0
+    }
+
+    .container .card .right-side {
+        width: 100%;
+        border-radius: 10px
+    }
+
+
+    .input_div {
+        display: block
+    }
+
+    .input_text {
+        margin-top: 40px
+    }
+}
