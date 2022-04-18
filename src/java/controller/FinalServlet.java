@@ -1,6 +1,7 @@
 package controller;
 
 import dto.DealerDTO;
+import dto.TrafficPoliceDTO;
 import dto.UserDTO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.DealerUpdateAuthenticator;
+import model.TrafficPoliceUpdateAuthenticator;
 import model.UserUpdateAuthenticator;
 
 public class FinalServlet extends HttpServlet {
@@ -108,6 +110,39 @@ public class FinalServlet extends HttpServlet {
            else
            {
                response.sendRedirect("dealer_dashboard.jsp#editemail");
+           }
+       }
+           if(page.equals("trafficemail"))
+       {
+           System.out.println(otp+""+userotp);
+           if(otp.equals(userotp))
+           {
+               HttpSession session=request.getSession(true);
+               String userid=(String)session.getAttribute("userid");
+               System.out.println(userid);
+               
+               String email=(String)session.getAttribute("email");
+               TrafficPoliceDTO dto=new TrafficPoliceDTO();
+               dto.setEmail(email);
+               dto.setUserid(userid);
+               
+               TrafficPoliceUpdateAuthenticator updt=new TrafficPoliceUpdateAuthenticator();
+                boolean check=updt.isUpdateEmail(dto);
+
+                if(check)
+                {
+                    System.out.println("yes");
+                    response.sendRedirect("trafficPoliceDashboard.jsp");
+                }
+                else
+                {
+                    System.out.println("no");
+                    response.sendRedirect("trafficPoliceDashboard.jsp");
+                }
+           }
+           else
+           {
+               response.sendRedirect("trafficPoliceDashboard.jsp");
            }
        }
     }

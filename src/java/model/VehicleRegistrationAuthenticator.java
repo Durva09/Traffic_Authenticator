@@ -26,10 +26,11 @@ public class VehicleRegistrationAuthenticator {
           inputStream = filePart1.getInputStream(); 
           length = inputStream.available();
         }
+        byte[] byt=vehicle.getByt();
         
         try
         {
-        PreparedStatement ps=con.prepareStatement("insert into vehicle_registration values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement ps=con.prepareStatement("insert into vehicle_registration values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,vehicle.getSoldby());
         ps.setString(2,vehicle.getName());
         ps.setString(3,vehicle.getFname());
@@ -59,6 +60,8 @@ public class VehicleRegistrationAuthenticator {
         ps.setBinaryStream(27,inputStream,length);
         ps.setString(28,vehicle.getDealerid());
         ps.setString(29,vehicle.getPurchaseDate());
+        ps.setString(30,"in_progress");
+        ps.setBytes(31, byt);
         int x=ps.executeUpdate();
         if(x>0)
         {

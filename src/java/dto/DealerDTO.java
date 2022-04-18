@@ -11,7 +11,7 @@ package dto;
  */
 public class DealerDTO {
 
-    String name,issue_date,license_no,contact,address,nearby_rto,email,newemail,userid,newpass,password;
+    String name,issue_date,license_no,contact,address,nearby_rto,email,userid,newpass,password;
 
     public String getPassword() {
         return password;
@@ -35,14 +35,6 @@ public class DealerDTO {
 
     public void setUserid(String userid) {
         this.userid = userid;
-    }
-
-    public String getNewemail() {
-        return newemail;
-    }
-
-    public void setNewemail(String newemail) {
-        this.newemail = newemail;
     }
 
     public String getEmail() {

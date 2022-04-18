@@ -4,7 +4,104 @@ import javax.servlet.http.Part;
 
 public class VehicleDTO {
    
-String soldby,name,fname,dealerid,purchaseDate,dob,address,showroom_address,state,city,pincode,contact1,contact2,email,aadhar,license,vehicleno,engineno,chassis,rcno,enginetype,vehiclecompany,modelno,rtoname,yearofmanufacture,vehiclecolor,registrationvalidity,vehicletype;
+String soldby,name,fname,dealerid,datechecked,status,timechecked,policeid,locationchecked,purchaseDate,dob,address,showroom_address,state,city,pincode,contact1,contact2,email,aadhar,license,vehicleno,engineno,chassis,rcno,enginetype,vehiclecompany,modelno,rtoname,yearofmanufacture,vehiclecolor,registrationvalidity,vehicletype;
+String vehicle_complainid,complain_date_time,complain_title,complain_description,complain_category,statuschecked;
+byte[] byt;
+
+    public byte[] getByt() {
+        return byt;
+    }
+
+    public void setByt(byte[] byt) {
+        this.byt = byt;
+    }
+
+    public String getStatuschecked() {
+        return statuschecked;
+    }
+
+    public void setStatuschecked(String statuschecked) {
+        this.statuschecked = statuschecked;
+    }
+
+    public String getVehicle_complainid() {
+        return vehicle_complainid;
+    }
+
+    public void setVehicle_complainid(String vehicle_complainid) {
+        this.vehicle_complainid = vehicle_complainid;
+    }
+
+    public String getComplain_date_time() {
+        return complain_date_time;
+    }
+
+    public void setComplain_date_time(String complain_date_time) {
+        this.complain_date_time = complain_date_time;
+    }
+
+    public String getComplain_title() {
+        return complain_title;
+    }
+
+    public void setComplain_title(String complain_title) {
+        this.complain_title = complain_title;
+    }
+
+    public String getComplain_description() {
+        return complain_description;
+    }
+
+    public void setComplain_description(String complain_description) {
+        this.complain_description = complain_description;
+    }
+
+    public String getComplain_category() {
+        return complain_category;
+    }
+
+    public void setComplain_category(String complain_category) {
+        this.complain_category = complain_category;
+    }
+    public String getLocationchecked() {
+        return locationchecked;
+    }
+
+    public void setLocationchecked(String locationchecked) {
+        this.locationchecked = locationchecked;
+    }
+
+    public String getTimechecked() {
+        return timechecked;
+    }
+
+    public void setTimechecked(String timechecked) {
+        this.timechecked = timechecked;
+    }
+
+    public String getPoliceid() {
+        return policeid;
+    }
+
+    public void setPoliceid(String policeid) {
+        this.policeid = policeid;
+    }
+
+    public String getDatechecked() {
+        return datechecked;
+    }
+
+    public void setDatechecked(String datechecked) {
+        this.datechecked = datechecked;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public String getPurchaseDate() {
         return purchaseDate;

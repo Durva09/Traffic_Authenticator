@@ -4,7 +4,97 @@ import javax.servlet.http.Part;
 
 public class UserDTO 
 {
-    String userid,password,mode,name,dob,gender,contact,email,aadhar,newpass,address,profession,newemail,age;
+    String userid,password,mode,name,dob,gender,contact,email,aadhar,newpass,address,profession,age,datechecked,timechecked,policeid,locationchecked;
+    String user_complainid,complain_date_time,complain_title,complain_description,complain_category,stats;
+    byte[] byt;
+
+    public byte[] getByt() {
+        return byt;
+    }
+
+    public void setByt(byte[] byt) {
+        this.byt = byt;
+    }
+
+    public String getStats() {
+        return stats;
+    }
+
+    public void setStats(String stats) {
+        this.stats = stats;
+    }
+
+    public String getUser_complainid() {
+        return user_complainid;
+    }
+
+    public void setUser_complainid(String user_complainid) {
+        this.user_complainid = user_complainid;
+    }
+
+    public String getComplain_date_time() {
+        return complain_date_time;
+    }
+
+    public void setComplain_date_time(String complain_date_time) {
+        this.complain_date_time = complain_date_time;
+    }
+
+    public String getComplain_title() {
+        return complain_title;
+    }
+
+    public void setComplain_title(String complain_title) {
+        this.complain_title = complain_title;
+    }
+
+    public String getComplain_description() {
+        return complain_description;
+    }
+
+    public void setComplain_description(String complain_description) {
+        this.complain_description = complain_description;
+    }
+
+    public String getComplain_category() {
+        return complain_category;
+    }
+
+    public void setComplain_category(String complain_category) {
+        this.complain_category = complain_category;
+    }
+
+    public String getDatechecked() {
+        return datechecked;
+    }
+
+    public void setDatechecked(String datechecked) {
+        this.datechecked = datechecked;
+    }
+
+    public String getTimechecked() {
+        return timechecked;
+    }
+
+    public void setTimechecked(String timechecked) {
+        this.timechecked = timechecked;
+    }
+
+    public String getPoliceid() {
+        return policeid;
+    }
+
+    public void setPoliceid(String policeid) {
+        this.policeid = policeid;
+    }
+
+    public String getLocationchecked() {
+        return locationchecked;
+    }
+
+    public void setLocationchecked(String locationchecked) {
+        this.locationchecked = locationchecked;
+    }
     Part profile;
     
     
@@ -22,15 +112,6 @@ public class UserDTO
 
     public String getAge() {
         return age;
-    }
-
-    public String getNewemail() {
-        return newemail;
-    }
-
-    public void setNewemail(String newemail) {
-        this.newemail = newemail;
-        System.out.println("heyo");
     }
 
     public String getAddress() {

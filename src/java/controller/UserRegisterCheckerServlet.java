@@ -1,5 +1,7 @@
 package controller;
 
+import com.google.zxing.WriterException;
+import dao.UserDAO;
 import dto.UserDTO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -46,6 +48,17 @@ public class UserRegisterCheckerServlet extends HttpServlet
         user.setEmail(email);
         user.setUserid(userid);
         user.setProfile(profile);
+        
+        UserDAO userdao=new UserDAO();
+        
+        try {
+            byte[] byt = userdao.getQRCodeImage(userid, 350, 350);
+            user.setByt(byt);
+        } catch (WriterException e) {
+            System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Could not generate QR Code, IOException :: " + e.getMessage());
+        }
         
         UserRegisterAuthenticator auth = new UserRegisterAuthenticator();
         boolean register = false;

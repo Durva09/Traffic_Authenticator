@@ -24,6 +24,7 @@ String userid=user.getUserid();
 String aadhar=user.getAadhar();
 String email=user.getEmail();
 String password=user.getPassword();
+byte[] byt=user.getByt();
 
 Part profile=user.getProfile();
    
@@ -56,7 +57,7 @@ if(rs.next())
     
     if(f1.equalsIgnoreCase(name) && d1.equals(dob) && g1.equalsIgnoreCase(gender))
     {
-        PreparedStatement ps=con.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement ps=con.prepareStatement("insert into user values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,userid);
         ps.setString(2,aadhar);
         ps.setString(3,password);
@@ -69,6 +70,7 @@ if(rs.next())
         ps.setBinaryStream(10,inputStream,length);
         ps.setString(11,address);
         ps.setString(12, null);
+        ps.setBytes(13, byt);
         int x=ps.executeUpdate();
         if(x>0)
         {

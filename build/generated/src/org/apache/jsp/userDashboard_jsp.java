@@ -1833,6 +1833,7 @@ public final class userDashboard_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                        <label for=\"password\" class=\"form-label\">Confirm Password</label>\n");
       out.write("                        <input class=\"form-control\" name=\"conpass\" type=\"password\" required=\"\" id=\"password\" placeholder=\"Confirm Password\">\n");
       out.write("                    </div>\n");
+      out.write("                    <input type=\"hidden\" name=\"page\" value=\"userDashboard.jsp\">\n");
       out.write("                    <div class=\"mb-3 text-center\">\n");
       out.write("                        <button class=\"btn btn-primary\" type=\"submit\">Change Password</button>\n");
       out.write("                    </div>\n");

@@ -1,6 +1,7 @@
 package controller;
 
 import dto.DealerDTO;
+import dto.TrafficPoliceDTO;
 import dto.UserDTO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -53,6 +54,16 @@ public class EditPasswordServlet extends HttpServlet
 
                 EditPasswordAuthenticator auth=new EditPasswordAuthenticator();
                 edit=auth.isEdit(dealer);
+            }
+            else if(page.equals("trafficPoliceDashboard.jsp"))
+            {
+                TrafficPoliceDTO police=new TrafficPoliceDTO();
+                police.setNewpass(newpass);
+                police.setPassword(current);
+                police.setUserid(userid);
+
+                EditPasswordAuthenticator auth=new EditPasswordAuthenticator();
+                edit=auth.isEdit(police);
             }
             
             if(edit)

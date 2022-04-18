@@ -1,5 +1,7 @@
 package controller;
 
+import com.google.zxing.WriterException;
+import dao.VehicleDAO;
 import dto.VehicleDTO;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import model.VehicleRegistrationAuthenticator;
+
 
 @MultipartConfig(maxFileSize = 16177215)
 public class VehicleRegistrationServlet extends HttpServlet {
@@ -25,6 +28,7 @@ public class VehicleRegistrationServlet extends HttpServlet {
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response)throws IOException,ServletException
     {
+        
         HttpSession session=request.getSession();
         String dealerid=(String)session.getAttribute("userid");
         
@@ -90,6 +94,16 @@ public class VehicleRegistrationServlet extends HttpServlet {
         vehicle.setDealerid(dealerid);
         vehicle.setPurchaseDate(registrationdate);
         
+        VehicleDAO vehicledao=new VehicleDAO();
+        
+        try {
+            byte[] byt = vehicledao.getQRCodeImage(chassis, 350, 350);
+            vehicle.setByt(byt);
+        } catch (WriterException e) {
+            System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Could not generate QR Code, IOException :: " + e.getMessage());
+        }
         VehicleRegistrationAuthenticator register=new VehicleRegistrationAuthenticator();
         boolean isregister=register.isRegister(vehicle);
         

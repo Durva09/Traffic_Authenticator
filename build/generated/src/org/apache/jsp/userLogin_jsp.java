@@ -305,7 +305,7 @@ public final class userLogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                Login\n");
       out.write("              </button>\n");
       out.write("            </div>\n");
-      out.write("            <div class=\"signup-link\">\n");
+      out.write("                <div><br>\n");
       out.write("              Don't have account? <a href=\"userGetOTP.jsp\">Register</a>\n");
       out.write("            </div>\n");
       out.write("          </form>\n");
@@ -332,8 +332,8 @@ public final class userLogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </button>\n");
       out.write("              \n");
       out.write("            </div>\n");
-      out.write("            <div class=\"signup-link\">\n");
-      out.write("              Don't have account? <a href=\"\">Register</a>\n");
+      out.write("                <div><br>\n");
+      out.write("              Don't have account? <a href=\"userGetOTP.jsp\">Register</a>\n");
       out.write("            </div>\n");
       out.write("          </form>\n");
       out.write("        </div>\n");

@@ -577,7 +577,7 @@
                                                             <%=vehicle1.getModelno()%>
                                                         </td>
                                                         <td>
-                                                            <span class="badge bg-success">Active</span>
+                                                            <%=vehicle1.getStatuschecked()%>
                                                         </td>
                     
                                                         <td class="table-action">
